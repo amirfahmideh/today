@@ -8,6 +8,9 @@ import { faIR } from "@material-ui/core/locale";
 
 const theme = createMuiTheme(
   {
+    typography: {
+      fontFamily: ["Iran Sans", "tahoma"].join(","),
+    },
     palette: {
       type: "dark",
     },
