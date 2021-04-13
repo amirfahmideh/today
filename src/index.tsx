@@ -6,7 +6,14 @@ import App from "./app";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { faIR } from "@material-ui/core/locale";
 
-const theme = createMuiTheme({}, faIR);
+const theme = createMuiTheme(
+  {
+    palette: {
+      type: "dark",
+    },
+  },
+  faIR
+);
 dom.render(
   <ThemeProvider theme={theme}>
     <App />
