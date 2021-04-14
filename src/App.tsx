@@ -14,6 +14,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import "./app.css";
+import { getWeatherResult } from "./api/openWeatherApi";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,8 +39,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const App: React.FunctionComponent<{}> = () => {
+  const [temperature, setTemperature] = React.useState<number>(0);
   const [drawerOpen, setDrawerOpenState] = React.useState(false);
   const classes = useStyles();
+
+  React.useEffect(() => {
+    getWeatherResult().then((tem) => {
+      setTemperature(tem);
+    });
+  }, []);
   return (
     <div className={classes.root}>
       <AppBar className={classes.appBar} position="static">
@@ -73,7 +81,7 @@ export const App: React.FunctionComponent<{}> = () => {
       <Container className={classes.container}>
         <Card className={classes.card}>
           <CardHeader title="آب و هوا"></CardHeader>
-          <CardContent>18 Degree</CardContent>
+          <CardContent>{temperature}&deg;</CardContent>
         </Card>
       </Container>
     </div>
