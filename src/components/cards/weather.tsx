@@ -31,6 +31,7 @@ export const Weather: React.FunctionComponent<{}> = () => {
 
   React.useEffect(() => {
     getWeatherResult().then((weatherResult) => {
+      console.log(weatherResult);
       setWeatherResult(weatherResult);
     });
   }, []);
