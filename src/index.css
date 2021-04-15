@@ -1,6 +1,7 @@
 @font-face {
-  font-family: "Iran Sans";
+  font-family: "IranSans";
   font-style: normal;
+  font-display: swap;
   src: url("fonts/eot/IRANSansWeb(FaNum).eot");
   src: url("fonts/eot/IRANSansWeb(FaNum).eot?#iefix")
       format("embedded-opentype"),
@@ -10,9 +11,10 @@
 }
 
 @font-face {
-  font-family: "Iran Sans";
+  font-family: "IranSans";
   font-style: normal;
   font-weight: bold;
+  font-display: swap;
   src: url("fonts/eot/IRANSansWeb(FaNum)_Bold.eot");
   src: url("fonts/eot/IRANSansWeb(FaNum)_Bold.eot?#iefix")
       format("embedded-opentype"),

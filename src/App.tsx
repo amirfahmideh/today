@@ -2,9 +2,6 @@ import React from "react";
 import {
   AppBar,
   Button,
-  Card,
-  CardContent,
-  CardHeader,
   Container,
   Drawer,
   IconButton,
@@ -14,7 +11,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import "./app.css";
-import { getWeatherResult } from "./api/openWeatherApi";
+import Weather from "./components/cards/weather";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,22 +29,15 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     marginRight: theme.spacing(2),
   },
-  card: {},
   container: {
     padding: 10,
   },
 }));
 
 export const App: React.FunctionComponent<{}> = () => {
-  const [temperature, setTemperature] = React.useState<number>(0);
   const [drawerOpen, setDrawerOpenState] = React.useState(false);
   const classes = useStyles();
 
-  React.useEffect(() => {
-    getWeatherResult().then((tem) => {
-      setTemperature(tem);
-    });
-  }, []);
   return (
     <div className={classes.root}>
       <AppBar className={classes.appBar} position="static">
@@ -79,10 +69,7 @@ export const App: React.FunctionComponent<{}> = () => {
         put whatever you want in here!
       </Drawer>
       <Container className={classes.container}>
-        <Card className={classes.card}>
-          <CardHeader title="آب و هوا"></CardHeader>
-          <CardContent>{temperature}&deg;</CardContent>
-        </Card>
+        <Weather />
       </Container>
     </div>
   );
