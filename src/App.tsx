@@ -2,7 +2,6 @@ import React from "react";
 import {
   AppBar,
   Button,
-  Drawer,
   Grid,
   IconButton,
   Toolbar,
@@ -12,6 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import "./app.css";
 import Weather from "./components/cards/weather";
+import MainDrawer from "./components/menu/mainDrawer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,8 +40,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const App: React.FunctionComponent<{}> = () => {
-  const [drawerOpen, setDrawerOpenState] = React.useState(false);
   const classes = useStyles();
+  const [isDrawerOpen, setDrawerOpenState] = React.useState(false);
 
   return (
     <div className={classes.root}>
@@ -64,15 +64,12 @@ export const App: React.FunctionComponent<{}> = () => {
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
-      <Drawer
-        anchor={"right"}
-        open={drawerOpen}
-        onClose={() => {
+      <MainDrawer
+        openDrawer={isDrawerOpen}
+        handleOnCloseDrawerClick={() => {
           setDrawerOpenState(false);
         }}
-      >
-        put whatever you want in here!
-      </Drawer>
+      />
       <Grid container className={classes.container}>
         <Grid xs={10} md={6} lg={4} item className={classes.cardItem}>
           <Weather />
