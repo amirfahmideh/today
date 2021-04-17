@@ -71,7 +71,7 @@ export const App: React.FunctionComponent<{}> = () => {
         }}
       />
       <Grid container className={classes.container}>
-        <Grid xs={10} md={6} lg={4} item className={classes.cardItem}>
+        <Grid xs={12} md={6} lg={4} item className={classes.cardItem}>
           <Weather />
         </Grid>
       </Grid>

@@ -13,7 +13,7 @@ import { getWeatherResult } from "../../api/openWeatherApi";
 import { WeatherResult } from "../../api/weatherResult";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import clsx from "clsx";
-import { ConvertFromUnix, FormattedFromUnix } from "../../helper/dateHelper";
+import { FormattedFromUnix } from "../../helper/dateHelper";
 
 const useStyles = makeStyles((theme) => ({
   card: {},
@@ -26,6 +26,8 @@ const useStyles = makeStyles((theme) => ({
   },
   degree: {
     fontSize: theme.typography.h3.fontSize,
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
   },
   minMax: {
     fontSize: theme.typography.h6.fontSize,
@@ -39,6 +41,10 @@ const useStyles = makeStyles((theme) => ({
   },
   expandOpen: {
     transform: "rotate(180deg)",
+  },
+  signSpacing: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
   },
 }));
 export const Weather: React.FunctionComponent<{}> = () => {
@@ -125,25 +131,29 @@ export const Weather: React.FunctionComponent<{}> = () => {
             <Grid item className={classes.gridItem}>
               <Typography>سرعت باد</Typography>
               <Typography>
-                <b>{weatherResult?.wind.speed}</b> meter/sec
+                <b>{weatherResult?.wind.speed}</b>
+                <span className={classes.signSpacing}>meter/sec</span>
               </Typography>
             </Grid>
             <Grid item className={classes.gridItem}>
               <Typography>درجه باد</Typography>
               <Typography>
-                <b>{weatherResult?.wind.deg}</b> degrees
+                <b>{weatherResult?.wind.deg}</b>
+                <span className={classes.signSpacing}>degree</span>
               </Typography>
             </Grid>
             <Grid item className={classes.gridItem}>
               <Typography>رطوبت</Typography>
               <Typography>
-                <b>{weatherResult?.main.humidity}</b> %
+                <b>{weatherResult?.main.humidity}</b>
+                <span className={classes.signSpacing}>%</span>
               </Typography>
             </Grid>
             <Grid item className={classes.gridItem}>
               <Typography>فشار</Typography>
               <Typography>
-                <b>{weatherResult?.main.pressure}</b> hPa
+                <b>{weatherResult?.main.pressure}</b>
+                <span className={classes.signSpacing}>hpa</span>
               </Typography>
             </Grid>
           </Grid>
