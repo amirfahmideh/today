@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/today/static/css/main.bb854108.chunk.css",
+    "main.js": "/today/static/js/main.4f42dcda.chunk.js",
+    "main.js.map": "/today/static/js/main.4f42dcda.chunk.js.map",
+    "runtime-main.js": "/today/static/js/runtime-main.5cd65560.js",
+    "runtime-main.js.map": "/today/static/js/runtime-main.5cd65560.js.map",
+    "static/js/2.4bcac34e.chunk.js": "/today/static/js/2.4bcac34e.chunk.js",
+    "static/js/2.4bcac34e.chunk.js.map": "/today/static/js/2.4bcac34e.chunk.js.map",
+    "index.html": "/today/index.html",
+    "static/css/main.bb854108.chunk.css.map": "/today/static/css/main.bb854108.chunk.css.map",
+    "static/js/2.4bcac34e.chunk.js.LICENSE.txt": "/today/static/js/2.4bcac34e.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/today/static/media/IRANSansWeb(FaNum)_Bold.fc9fc75a.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5cd65560.js",
+    "static/js/2.4bcac34e.chunk.js",
+    "static/css/main.bb854108.chunk.css",
+    "static/js/main.4f42dcda.chunk.js"
+  ]
+}
