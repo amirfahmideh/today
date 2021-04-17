@@ -1,7 +1,7 @@
 {
+  "homepage": "http://amirfahmideh.github.io/today",
   "name": "today",
   "version": "0.1.0",
-  "homepage": "http://amirfahmideh.github.io/today",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.3",
