@@ -2,8 +2,8 @@ import React from "react";
 import {
   AppBar,
   Button,
-  Container,
   Drawer,
+  Grid,
   IconButton,
   Toolbar,
   Typography,
@@ -31,6 +31,11 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     padding: 10,
+    alignContent: "center",
+  },
+  cardItem: {
+    alignContent: "center",
+    margin: "auto",
   },
 }));
 
@@ -68,9 +73,11 @@ export const App: React.FunctionComponent<{}> = () => {
       >
         put whatever you want in here!
       </Drawer>
-      <Container className={classes.container}>
-        <Weather />
-      </Container>
+      <Grid container className={classes.container}>
+        <Grid xs={10} md={6} lg={4} item className={classes.cardItem}>
+          <Weather />
+        </Grid>
+      </Grid>
     </div>
   );
 };

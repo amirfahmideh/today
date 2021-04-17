@@ -1,5 +1,4 @@
 import {
-  Badge,
   Card,
   CardActions,
   CardContent,
@@ -51,7 +50,7 @@ export const Weather: React.FunctionComponent<{}> = () => {
 
   React.useEffect(() => {
     getWeatherResult().then((weatherResult) => {
-      console.log(weatherResult);
+      console.log("Weather Result:", weatherResult);
       setWeatherResult(weatherResult);
     });
   }, []);
