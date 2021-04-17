@@ -101,6 +101,18 @@ export const Weather: React.FunctionComponent<{}> = () => {
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <Grid container spacing={6}>
             <Grid item className={classes.gridItem}>
+              <Typography>طلوع</Typography>
+              <Typography>
+                <b>{weatherResult?.sys.sunrise}</b>
+              </Typography>
+            </Grid>
+            <Grid item className={classes.gridItem}>
+              <Typography>غروب</Typography>
+              <Typography>
+                <b>{weatherResult?.sys.sunset}</b>
+              </Typography>
+            </Grid>
+            <Grid item className={classes.gridItem}>
               <Typography>سرعت باد</Typography>
               <Typography>
                 <b>{weatherResult?.wind.speed}</b>
