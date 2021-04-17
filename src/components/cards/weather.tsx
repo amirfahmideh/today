@@ -13,6 +13,7 @@ import { getWeatherResult } from "../../api/openWeatherApi";
 import { WeatherResult } from "../../api/weatherResult";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import clsx from "clsx";
+import { ConvertFromUnix, FormattedFromUnix } from "../../helper/dateHelper";
 
 const useStyles = makeStyles((theme) => ({
   card: {},
@@ -50,7 +51,6 @@ export const Weather: React.FunctionComponent<{}> = () => {
 
   React.useEffect(() => {
     getWeatherResult().then((weatherResult) => {
-      console.log("Weather Result:", weatherResult);
       setWeatherResult(weatherResult);
     });
   }, []);
@@ -103,37 +103,47 @@ export const Weather: React.FunctionComponent<{}> = () => {
             <Grid item className={classes.gridItem}>
               <Typography>طلوع</Typography>
               <Typography>
-                <b>{weatherResult?.sys.sunrise}</b>
+                <b>
+                  {FormattedFromUnix(
+                    weatherResult?.sys.sunset ?? 0,
+                    "hh:mm:ss"
+                  )}
+                </b>
               </Typography>
             </Grid>
             <Grid item className={classes.gridItem}>
               <Typography>غروب</Typography>
               <Typography>
-                <b>{weatherResult?.sys.sunset}</b>
+                <b>
+                  {FormattedFromUnix(
+                    weatherResult?.sys.sunrise ?? 0,
+                    "HH:mm:ss"
+                  )}
+                </b>
               </Typography>
             </Grid>
             <Grid item className={classes.gridItem}>
               <Typography>سرعت باد</Typography>
               <Typography>
-                <b>{weatherResult?.wind.speed}</b>
+                <b>{weatherResult?.wind.speed}</b> meter/sec
               </Typography>
             </Grid>
             <Grid item className={classes.gridItem}>
               <Typography>درجه باد</Typography>
               <Typography>
-                <b>{weatherResult?.wind.deg}</b>
+                <b>{weatherResult?.wind.deg}</b> degrees
               </Typography>
             </Grid>
             <Grid item className={classes.gridItem}>
               <Typography>رطوبت</Typography>
               <Typography>
-                <b>{weatherResult?.main.humidity}</b>
+                <b>{weatherResult?.main.humidity}</b> %
               </Typography>
             </Grid>
             <Grid item className={classes.gridItem}>
               <Typography>فشار</Typography>
               <Typography>
-                <b>{weatherResult?.main.pressure}</b>
+                <b>{weatherResult?.main.pressure}</b> hPa
               </Typography>
             </Grid>
           </Grid>
