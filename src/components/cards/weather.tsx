@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Card,
   CardActions,
@@ -8,10 +9,9 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import React from "react";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { getWeatherResult } from "../../api/openWeatherApi";
 import { WeatherResult } from "../../api/weatherResult";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import clsx from "clsx";
 import { FormattedFromUnix } from "../../helper/dateHelper";
 
@@ -63,7 +63,6 @@ export const Weather: React.FunctionComponent<{}> = () => {
 
   return (
     <Card className={classes.card}>
-      {/* <CardHeader className={classes.cardHeader} title="آب و هوا"></CardHeader> */}
       <CardContent>
         <Grid container spacing={0}>
           <Grid item xs={12} className={classes.gridItem}>
